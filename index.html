@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>NPT 24 ident</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="./libraries/p5.min.js"></script>
+    <script src="./libraries/seedrandom.min.js"></script>
+
+    <script src="./sketch.js"></script>
+    <script src="./js/input.js"></script>
+    <script src="./js/Bird.js"></script>
+    <script src="./js/WobblyCircle.js"></script>
+    <script src="./js/RadialPoint.js"></script>
+</head>
+
+<body>
+    <div id="toolbar-container">
+        <div id="toolbar">
+            <button id="export-settings" class="btn">Export settings</button>
+            <span><button id="reset-settings" class="btn half-btn">Load defaults</button><button id="load-settings" class="btn half-btn">Load saved</button></span>
+            <button id="save-settings" class="btn">Save settings</button>
+            <button id="update" class="btn"> >>> Update image <<< </button>
+            <button type="button" class="collapsible">Symbols ▾</button>
+            <div class="content">
+                <span><label for="symbol-set">Symbol set </label><select name="symbol-set" id="symbol-set">
+                    <option value="hybrid">hybrid</option>
+                    <option value="og">og</option>
+                    <option value="new">new</option>
+                </select></span>
+                <!-- <span><input type="checkbox" id="og-symbols" name="og-symbols-check"><label for="og-symbols-check">Use OG symbols</label></span> -->
+                <span><input type="checkbox" id="colour-density" name="colour-density-check"><label for="colour-density-check">Tie colour to density</label></span>
+                <span><input type="checkbox" id="symbol-density" name="symbol-density-check"><label for="symbol-density-check">Tie symbols to colour</label></span>
+                <div id="gradient"></div>
+                <span><input type="checkbox" id="use-gradient" name="gradient-check"><label for="gradient-check">Use this gradient</label></span>
+                <span><input type="checkbox" id="flip-gradient" name="gradient-flip"><label for="gradient-flip">Flip gradient</label></span>
+                <span><button id="add-colour" class="btn half-btn">+ colour picker</button><button id="minus-colour" class="btn half-btn"> - colour picker</button></span>
+                <div id="colour-picker-holder"></div>
+                <span><input id="colour-blending" type="number" style="width: 80px"><label>Colour blending</label></span>
+            </div>
+            <button type="button" class="collapsible">Background ▾</button>
+            <div class="content">
+                <span><input id="bg-colour" type="color"><label>Background colour</label></span>
+                <span><input id="bg-alpha" type="number" style="width: 40px"><label>Background alpha (0-1)</label></span>
+                <span><input id="canvas-width" type="number" style="width: 80px"><label>Canvas width</label></span>
+                <span><input id="canvas-height" type="number" style="width: 80px"><label>Canvas height</label></span>
+            </div>
+            <button type="button" class="collapsible">Logotype ▾</button>
+            <div class="content">
+                <span><input type="checkbox" id="hide-logo" name="hide-logo-check"><label for="hide-logo-check">Hide logo</label></span>
+                <span><input type="checkbox" id="shadow-below" name="shadow-below-check"><label for="shadow-below-check">Shadow below everything</label></span>
+                <span><input id="logotype-size" type="number" style="width: 40px"><label>Size</label></span>
+                <span><input id="logotype-colour" type="color"><label>Colour</label></span>
+                <span><input id="shadow-colour" type="color"><label>Shadow colour</label></span>
+                <span><input id="shadow-x" type="number" style="width: 40px"><label>Shadow x offset</label></span>
+                <span><input id="shadow-y" type="number" style="width: 40px"><label>Shadow y offset</label></span>
+            </div>
+            <button type="button" class="collapsible">Blob ▾</button>
+            <div class="content">
+                <span><input id="blob-width" type="number" style="width: 80px"><label>Blob width</label></span>
+                <span><input id="blob-height" type="number" style="width: 80px"><label>Blob height</label></span>
+                <span><input id="blob-sharpness" type="number" style="width: 80px"><label>Blob sharpness</label></span>
+                <button id="random-seed" class="btn">Random seed</button>
+                <span><input id="blob-seed" type="number" style="width: 80px"><label>Blob seed</label></span>
+                <button id="make-blob" class="btn">Make blob from typed seed</button>
+            </div>
+            <button type="button" class="collapsible">Flock ▾</button>
+            <div class="content">
+                <span><input id="edge-blur" type="number" style="width: 80px"><label>Edge blur</label></span>
+                <span><input id="overall-density" type="number" style="width: 80px"><label>Overall spacing</label></span>
+                <span><input id="sparser-density" type="number" style="width: 80px"><label>Sparser spacing</label></span>
+            </div>
+            <button type="button" class="collapsible">Density ▾</button>
+            <div class="content">
+                <span><input id="linear-gradient" type="number" style="width: 80px"><label>Linear gradient</label></span>
+                <span><input type="checkbox" id="enable-radial" name="enable-radial-check"><label for="enable-radial-check">Use radial points</label></span>
+                <span><input id="radial-point-count" type="number" style="width: 80px"><label>Radial point count</label></span>
+                <span><input id="radial-size-min" type="number" style="width: 80px"><label>Radial size min</label></span>
+                <span><input id="radial-size-max" type="number" style="width: 80px"><label>Radial size max</label></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

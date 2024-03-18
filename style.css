@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+canvas {
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+#toolbar-container {
+    margin: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    height: 95vh;
+    width: 210px;
+    overflow-y: scroll;
+}
+
+#toolbar {
+    display: grid;
+    width: 210px;
+    background-color: #fff;
+}
+
+.btn {
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    border: #fff 1px solid;
+}
+
+.btn:hover {
+    background-color: #000;
+}
+
+.half-btn {
+    width: 50%;
+}
+
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    padding: 18px;
+    border: none;
+    text-transform: uppercase;
+}
+
+.active, .collapsible:hover {
+    background-color: #ccc;
+}
+
+.content {
+    display: none;
+}
+
+#gradient {
+    height: 30px;
+    width: 100%;
+    background: linear-gradient(to right, #33ccff 0%, #000 30%, #ff99cc 100%);
+}
+
+#colour-picker-holder {
+    display: grid;
+}
+
+select {
+    width: 100px;
+}

@@ -1,0 +1,36 @@
+{
+    "symbolSet": "hybrid",
+    "tieColourToDensity": true,
+    "tieSymbolsToColour": true,
+    "useGradient": true,
+    "flipGradient": false,
+    "symbolColours": [
+        "#C36A98", "#8895D5", "#5ED0DA", "#A8EB3D", "#EBB83D"
+    ],
+    "colourBlending": 0.2,
+    "bgColour": "#ffffff",
+    "bgAlpha": 0,
+    "canvasWidth": 1000,
+    "canvasHeight": 1000,
+    "hideLogo": false,
+    "shadowBelow": false,
+    "logotypeColour": "#ffffff",
+    "logotypeShadowColour": "#60C5D9",
+    "logotypeShadowOffset": {
+        "x": -4,
+        "y": 4
+    },
+    "logotypeSize": 100,
+    "blobWidth": 360,
+    "blobHeight": 300,
+    "blobSharpness": 4,
+    "blobSeed": 77136,
+    "flockEdgeBlur": 95,
+    "flockOverallDensity": 7,
+    "flockSparserDensity": 13,
+    "linearGradient": 0.013,
+    "useRadialPoints": false,
+    "radialPointCount": 5,
+    "radialSizeMin": 150,
+    "radialSizeMax": 250
+}
