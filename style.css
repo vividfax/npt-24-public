@@ -1,8 +1,16 @@
+@font-face {
+    font-family: "Jost";
+    src: url("./fonts/Jost-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #fff;
+    font-family: "Jost", sans-serif;
 }
 
 canvas {
@@ -91,8 +99,7 @@ select {
 
 .key-button {
     color: #fff;
-    font-family: sans-serif;
-    background-color: #444444;
+    background-color: #333333;
     border: none;
     border-radius: 7px;
     text-align: center;
@@ -100,9 +107,20 @@ select {
     width: 60px;
     height: 60px;
     margin: 5px;
+    font-family: "Jost", sans-serif;
 }
 
 .key-button:hover {
-    color: #444444;
+    color: #333333;
     background-color: #ccc;
+}
+
+#p5_loading {
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: #333333;
 }
