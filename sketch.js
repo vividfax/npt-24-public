@@ -75,7 +75,8 @@ function setup() {
     // let minHeight = windowHeight > 1200 ? windowHeight : 1200;
     // createCanvas(windowWidth, minHeight);
 
-    createCanvas(settings.canvasWidth, settings.canvasHeight);
+    // createCanvas(settings.canvasWidth, settings.canvasHeight);
+    createCanvas(windowWidth, windowHeight);
     imageMode(CENTER);
     noSmooth();
 
@@ -101,11 +102,11 @@ function draw() {
 
 function update() {
 
-    resizeCanvas(settings.canvasWidth, settings.canvasHeight);
+    // resizeCanvas(settings.canvasWidth, settings.canvasHeight);
 
-    if (settings.symbolSet == "hybrid") symbols = hybridSymbols;
-    else if (settings.symbolSet == "og") symbols = ogSymbols;
-    else if (settings.symbolSet == "new") symbols = newSymbols;
+    // if (settings.symbolSet == "hybrid") symbols = hybridSymbols;
+    // else if (settings.symbolSet == "og") symbols = ogSymbols;
+    // else if (settings.symbolSet == "new") symbols = newSymbols;
 
     // pixelateLogo();
 
