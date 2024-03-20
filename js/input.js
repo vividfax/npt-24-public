@@ -1,5 +1,7 @@
 function setupInput() {
 
+    return;
+
     setupCollapsibles();
     setupColourPickers();
 
@@ -94,6 +96,8 @@ function minusColourPicker() {
 
 function randomiseBlobSeed() {
 
+    randomiseRadialPoints();
+
     let rand = int(random(99999));
     settings.blobSeed = rand;
     select("#blob-seed").value(settings.blobSeed);
@@ -102,6 +106,8 @@ function randomiseBlobSeed() {
 }
 
 function updateSettings() {
+
+    return;
 
     updateColours();
 
@@ -216,6 +222,10 @@ function refreshSettings() {
 
 function keyPressed() {
 
+    pressKeyButton();
+
+    return;
+
     if (keyCode == ENTER) {
 
         toolbarVisible = !toolbarVisible;
@@ -226,5 +236,90 @@ function keyPressed() {
     } else if (keyCode == 32) { // SPACEBAR
 
         if (!toolbarVisible) update();
+    }
+}
+
+function pressKeyButton() {
+
+    if (key === "q" || key === "Q") change(0);
+    else if (key === "w" || key === "W") change(1);
+    else if (key === "e" || key === "E") change(2);
+    else if (key === "r" || key === "R") change(3);
+    else if (key === "t" || key === "T") change(4);
+    else if (key === "y" || key === "Y") change(5);
+    else if (keyCode === ENTER) select("#button-holder").style("display", "none");
+    // else return;
+
+    // lastKeebInput = frameCount;
+}
+
+function setupKeyButtons() {
+
+    select("#btn1").mousePressed(() => change(0));
+    select("#btn2").mousePressed(() => change(1));
+    select("#btn3").mousePressed(() => change(2));
+    select("#btn4").mousePressed(() => change(3));
+    select("#btn5").mousePressed(() => change(4));
+    select("#btn6").mousePressed(() => change(5));
+}
+
+function setupButtonStartValues() {
+
+    settings.symbolColours = buttonRanges[0].palettes[0].symbolColours;
+    settings.bgColour = buttonRanges[0].palettes[0].bgColour;
+    settings.logotypeColour = buttonRanges[0].palettes[0].logotypeColour;
+    settings.logotypeShadowColour = buttonRanges[0].palettes[0].logotypeShadowColour;
+
+    settings.blobSharpness = buttonRanges[2].start;
+    settings.flockOverallDensity = buttonRanges[3].start;
+    settings.flockEdgeBlur = buttonRanges[4].start;
+    settings.radialPointCount = buttonRanges[5].start;
+
+    randomiseBlobSeed();
+}
+
+function change(num) {
+
+    if (num == 0) {
+        buttonRanges[num].index++;
+        if (buttonRanges[num].index >= buttonRanges[num].palettes.length) buttonRanges[num].index = 0;
+        let index = buttonRanges[num].index;
+        settings.symbolColours = buttonRanges[num].palettes[index].symbolColours;
+        settings.bgColour = buttonRanges[num].palettes[index].bgColour;
+        settings.logotypeColour = buttonRanges[num].palettes[index].logotypeColour;
+        settings.logotypeShadowColour = buttonRanges[num].palettes[index].logotypeShadowColour;
+    } else if (num == 1) {
+        randomiseBlobSeed();
+    } else if (num == 2) {
+        settings.blobSharpness = int(settings.blobSharpness);
+        settings.blobSharpness += buttonRanges[num].step;
+        if (settings.blobSharpness > buttonRanges[num].upper) settings.blobSharpness = buttonRanges[num].lower;
+    } else if (num == 3) {
+        settings.flockOverallDensity = int(settings.flockOverallDensity);
+        settings.flockOverallDensity += buttonRanges[num].step;
+        if (settings.flockOverallDensity > buttonRanges[num].upper) settings.flockOverallDensity = buttonRanges[num].lower;
+        settings.flockSparserDensity = settings.flockOverallDensity*2;
+    } else if (num == 4) {
+        settings.flockEdgeBlur = int(settings.flockEdgeBlur);
+        settings.flockEdgeBlur += buttonRanges[num].step;
+        if (settings.flockEdgeBlur > buttonRanges[num].upper) settings.flockEdgeBlur = buttonRanges[num].lower;
+    } else if (num == 5) {
+        settings.radialPointCount = int(settings.radialPointCount);
+        settings.radialPointCount += buttonRanges[num].step;
+        if (settings.radialPointCount > buttonRanges[num].upper) settings.radialPointCount = buttonRanges[num].lower;
+        randomiseRadialPoints();
+    } else {
+        return;
+    }
+
+    update();
+}
+
+function randomiseRadialPoints() {
+
+    radialPoints = [];
+
+    if (settings.useRadialPoints) {
+        for (let i = 0; i < int(constrain(settings.radialPointCount, 0, 50)); i++) radialPoints.push(new RadialPoint(radialPoints));
     }
 }

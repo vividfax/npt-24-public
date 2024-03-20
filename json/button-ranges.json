@@ -1,0 +1,62 @@
+{
+    "0": {
+        "index": 0,
+        "palettes": [
+            {
+                "symbolColours": [
+                    "#C36A98", "#8895D5", "#5ED0DA", "#A8EB3D", "#EBB83D"
+                ],
+                "bgColour": "#ffffff",
+                "logotypeColour": "#ffffff",
+                "logotypeShadowColour": "#60C5D9"
+            },
+            {
+                "symbolColours": [
+                    "#155625", "#7735c7", "#d5e54e", "#7384e9", "#8cb24e"
+                ],
+                "bgColour": "#a389bd",
+                "logotypeColour": "#f0d83d",
+                "logotypeShadowColour": "#763597"
+            },
+            {
+                "symbolColours": [
+                    "#87d9c9", "#60282c", "#ad0367", "#efc4cc", "#078dd9"
+                ],
+                "bgColour": "#515c55",
+                "logotypeColour": "#c700b6",
+                "logotypeShadowColour": "#ffe5e5"
+            }
+        ]
+    },
+    "1": {
+        "option": "randomiseBlobSeed"
+    },
+    "2": {
+        "option": "blobSharpness",
+        "start": 4,
+        "lower": 2,
+        "upper": 8,
+        "step": 2
+    },
+    "3": {
+        "option": "flockOverallDensity",
+        "start": 7,
+        "lower": 7,
+        "upper": 13,
+        "step": 2
+    },
+    "4": {
+        "option": "flockEdgeBlur",
+        "start": 100,
+        "lower": 0,
+        "upper": 150,
+        "step": 50
+    },
+    "5":{
+        "option": "radialPointCount",
+        "start": 0,
+        "lower": 0,
+        "upper": 3,
+        "step": 3
+    }
+}

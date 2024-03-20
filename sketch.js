@@ -3,7 +3,7 @@ let symbols, newSymbols, ogSymbols, hybridSymbols;
 let logotype;
 let arrow, smoothArrow;
 let defaultSettings;
-let settings;
+let settings, buttonRanges;
 
 let flocks = [];
 let flockSize = 300;
@@ -13,6 +13,7 @@ let flockLeft = -1;
 let flockRight = -1;
 
 let wobblyCircle;
+let radialPoints = [];
 
 let palette;
 
@@ -23,6 +24,8 @@ let colourPickers = [];
 let toolbarVisible = true;
 let blobSeed = -1;
 
+let lastKeebInput = 0;
+
 function preload() {
 
     for (let i = 0; i < 3; i++) tiles.push(loadImage("./images/tile"+i+".png"));
@@ -32,6 +35,7 @@ function preload() {
     hybridSymbols = loadJSON("./json/hybrid-symbols.json");
     defaultSettings = loadJSON("./json/settings.json");
     settings = loadJSON("./json/settings.json");
+    buttonRanges = loadJSON("./json/button-ranges.json");
 
     logotype = loadImage("./images/logotype.svg");
     arrow = loadImage("./images/arrow.png");
@@ -65,7 +69,7 @@ function setup() {
 
     symbols = hybridSymbols;
 
-    if (getItem("settings") != null) settings = getItem("settings");
+    // if (getItem("settings") != null) settings = getItem("settings");
     fillMissingSettings();
 
     // let minHeight = windowHeight > 1200 ? windowHeight : 1200;
@@ -78,6 +82,9 @@ function setup() {
     pixelateLogo();
 
     setupInput();
+    setupKeyButtons();
+
+    setupButtonStartValues();
 
     newWobblyCircle();
 
@@ -86,7 +93,10 @@ function setup() {
 
 function draw() {
 
-    updateSettings();
+    // updateSettings();
+
+    // if (frameCount-lastKeebInput < 200) select("#button-holder").style("display", "none");
+    // else select("#button-holder").style("display", "block");
 }
 
 function update() {
@@ -97,7 +107,7 @@ function update() {
     else if (settings.symbolSet == "og") symbols = ogSymbols;
     else if (settings.symbolSet == "new") symbols = newSymbols;
 
-    pixelateLogo();
+    // pixelateLogo();
 
     newWobblyCircle();
 
@@ -205,11 +215,11 @@ function createFlock() {
     flockRight = -1;
 
     let flock = [];
-    let radialPoints = [];
+    // let radialPoints = [];
 
-    if (settings.useRadialPoints) {
-        for (let i = 0; i < int(constrain(settings.radialPointCount, 0, 50)); i++) radialPoints.push(new RadialPoint(radialPoints));
-    }
+    // if (settings.useRadialPoints) {
+    //     for (let i = 0; i < int(constrain(settings.radialPointCount, 0, 50)); i++) radialPoints.push(new RadialPoint(radialPoints));
+    // }
 
     let spacing = constrain(int(settings.flockOverallDensity), 5, 10000);
 
