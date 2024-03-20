@@ -241,30 +241,28 @@ function keyPressed() {
 
 function pressKeyButton() {
 
-    if (key === "q" || key === "Q") change(0);
-    else if (key === "w" || key === "W") change(1);
-    else if (key === "e" || key === "E") change(2);
-    else if (key === "r" || key === "R") change(3);
-    else if (key === "t" || key === "T") change(4);
-    else if (key === "y" || key === "Y") change(5);
+    if (key === "q" || key === "Q") changeNumToChange(0);
+    else if (key === "w" || key === "W") changeNumToChange(1);
+    else if (key === "e" || key === "E") changeNumToChange(2);
+    else if (key === "r" || key === "R") changeNumToChange(3);
+    else if (key === "t" || key === "T") changeNumToChange(4);
+    else if (key === "y" || key === "Y") changeNumToChange(5);
     else if (keyCode === ENTER) {
         if (keebButtonsVisible) select("#button-holder").style("display", "none");
         else select("#button-holder").style("display", "block");
         keebButtonsVisible = !keebButtonsVisible;
     }
-    // else return;
-
-    // lastKeebInput = frameCount;
+    else return;
 }
 
 function setupKeyButtons() {
 
-    select("#btn1").mousePressed(() => change(0));
-    select("#btn2").mousePressed(() => change(1));
-    select("#btn3").mousePressed(() => change(2));
-    select("#btn4").mousePressed(() => change(3));
-    select("#btn5").mousePressed(() => change(4));
-    select("#btn6").mousePressed(() => change(5));
+    select("#btn1").mousePressed(() => changeNumToChange(0));
+    select("#btn2").mousePressed(() => changeNumToChange(1));
+    select("#btn3").mousePressed(() => changeNumToChange(2));
+    select("#btn4").mousePressed(() => changeNumToChange(3));
+    select("#btn5").mousePressed(() => changeNumToChange(4));
+    select("#btn6").mousePressed(() => changeNumToChange(5));
 }
 
 function setupButtonStartValues() {
@@ -316,7 +314,15 @@ function change(num) {
         return;
     }
 
-    update();
+    // update();
+}
+
+function changeNumToChange(num) {
+
+    if (displayLoadingFrame || updateOnNextFrame || updating) return;
+
+    numToChange = num;
+    displayLoadingFrame = true;
 }
 
 function randomiseRadialPoints() {

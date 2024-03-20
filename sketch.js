@@ -1,5 +1,6 @@
 let tiles = [];
 let symbols, newSymbols, ogSymbols, hybridSymbols;
+let fonts = {};
 let logotype;
 let arrow, smoothArrow;
 let defaultSettings;
@@ -27,6 +28,11 @@ let blobSeed = -1;
 
 let lastKeebInput = 0;
 
+let numToChange = -1;
+let displayLoadingFrame = false;
+let updateOnNextFrame = false;
+let updating = false;
+
 function preload() {
 
     for (let i = 0; i < 3; i++) tiles.push(loadImage("./images/tile"+i+".png"));
@@ -41,6 +47,8 @@ function preload() {
     logotype = loadImage("./images/logotype.svg");
     arrow = loadImage("./images/arrow.png");
     smoothArrow = loadImage("./images/smooth-arrow.png");
+
+    fonts.jost = loadFont("./fonts/Jost-Regular.ttf");
 }
 
 function setup() {
@@ -99,6 +107,19 @@ function draw() {
 
     // if (frameCount-lastKeebInput < 200) select("#button-holder").style("display", "none");
     // else select("#button-holder").style("display", "block");
+
+    if (displayLoadingFrame) {
+        displayLoading();
+        updateOnNextFrame = true;
+        displayLoadingFrame = false;
+    } else if (updateOnNextFrame) {
+        change(numToChange);
+        update();
+        updating = true;
+        updateOnNextFrame = false;
+    } else if (updating) {
+        updating = false;
+    }
 }
 
 function update() {
@@ -151,6 +172,17 @@ function display() {
         tint(settings.logotypeColour);
         image(logoLayer, even(width/2), even(height/2), settings.logotypeSize*4, settings.logotypeSize*4);
     }
+}
+
+function displayLoading() {
+
+    push();
+    fill("#333");
+    textSize(60);
+    textAlign(CENTER, TOP);
+    textFont(fonts.jost);
+    text("Thinking...", width/2, 20);
+    pop();
 }
 
 function fillMissingSettings() {

@@ -121,6 +121,6 @@ select {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2rem;
+    font-size: 60px;
     color: #333333;
 }
