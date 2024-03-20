@@ -22,6 +22,7 @@ let logoLayer;
 let colourPickers = [];
 
 let toolbarVisible = true;
+let keebButtonsVisible = true;
 let blobSeed = -1;
 
 let lastKeebInput = 0;

@@ -247,7 +247,11 @@ function pressKeyButton() {
     else if (key === "r" || key === "R") change(3);
     else if (key === "t" || key === "T") change(4);
     else if (key === "y" || key === "Y") change(5);
-    else if (keyCode === ENTER) select("#button-holder").style("display", "none");
+    else if (keyCode === ENTER) {
+        if (keebButtonsVisible) select("#button-holder").style("display", "none");
+        else select("#button-holder").style("display", "block");
+        keebButtonsVisible = !keebButtonsVisible;
+    }
     // else return;
 
     // lastKeebInput = frameCount;
