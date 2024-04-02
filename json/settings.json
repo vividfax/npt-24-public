@@ -1,7 +1,7 @@
 {
     "symbolSet": "hybrid",
     "tieColourToDensity": true,
-    "tieSymbolsToColour": true,
+    "tieSymbolsToColour": false,
     "useGradient": true,
     "flipGradient": false,
     "symbolColours": [
