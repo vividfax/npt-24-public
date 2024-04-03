@@ -177,7 +177,8 @@ function display() {
 function displayLoading() {
 
     push();
-    fill("#333");
+    if (settings.uiMode == "light") fill("#333");
+    else if (settings.uiMode == "dark") fill("#fff");
     textSize(60);
     textAlign(CENTER, TOP);
     textFont(fonts.jost);

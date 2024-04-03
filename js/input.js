@@ -271,6 +271,7 @@ function setupButtonStartValues() {
     settings.bgColour = buttonRanges[0].palettes[0].bgColour;
     settings.logotypeColour = buttonRanges[0].palettes[0].logotypeColour;
     settings.logotypeShadowColour = buttonRanges[0].palettes[0].logotypeShadowColour;
+    settings.uiMode = buttonRanges[0].palettes[0].mode;
 
     settings.blobSharpness = buttonRanges[2].start;
     settings.flockOverallDensity = buttonRanges[3].start;
@@ -290,6 +291,7 @@ function change(num) {
         settings.bgColour = buttonRanges[num].palettes[index].bgColour;
         settings.logotypeColour = buttonRanges[num].palettes[index].logotypeColour;
         settings.logotypeShadowColour = buttonRanges[num].palettes[index].logotypeShadowColour;
+        settings.uiMode = buttonRanges[num].palettes[index].mode;
     } else if (num == 1) {
         randomiseBlobSeed();
     } else if (num == 2) {

@@ -9,6 +9,7 @@
     ],
     "colourBlending": 0.2,
     "bgColour": "#ffffff",
+    "uiMode": "light",
     "bgAlpha": 1,
     "canvasWidth": 1000,
     "canvasHeight": 1000,
