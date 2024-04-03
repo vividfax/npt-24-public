@@ -13,21 +13,21 @@
             },
             {
                 "symbolColours": [
+                    "#4660B1", "#AB67A4", "#B86BA1", "#CF7D97", "#F3A47C"
+                ],
+                "bgColour": "#FFFEFA",
+                "logotypeColour": "#0094EB",
+                "logotypeShadowColour": "#FFFEFA",
+                "mode": "light"
+            },
+            {
+                "symbolColours": [
                     "#155625", "#7735c7", "#d5e54e", "#99a6f0", "#8cb24e"
                 ],
                 "bgColour": "#a389bd",
                 "logotypeColour": "#f0d83d",
                 "logotypeShadowColour": "#7735c6",
                 "mode": "light"
-            },
-            {
-                "symbolColours": [
-                    "#00705a", "#60282c", "#ad0367", "#efc4cc", "#078dd9"
-                ],
-                "bgColour": "#5B7163",
-                "logotypeColour": "#c700b6",
-                "logotypeShadowColour": "#ffe5e5",
-                "mode": "dark"
             },
             {
                 "symbolColours": [
@@ -40,20 +40,11 @@
             },
             {
                 "symbolColours": [
-                    "#4660B1", "#AB67A4", "#B86BA1", "#CF7D97", "#F3A47C"
+                    "#B2F7E9", "#82D9C7", "#6377C5", "#3E3B6B", "#684897", "#6D2B75", "#ED0A8D"
                 ],
-                "bgColour": "#FFFEFA",
-                "logotypeColour": "#0094EB",
-                "logotypeShadowColour": "#FFFEFA",
-                "mode": "light"
-            },
-            {
-                "symbolColours": [
-                    "#FFFBFD", "#F9C4E0", "#A3A38E", "#7A995B", "#2A5660", "#20434C"
-                ],
-                "bgColour": "#26364E",
-                "logotypeColour": "#FFF0F8",
-                "logotypeShadowColour": "#20434C",
+                "bgColour": "#000000",
+                "logotypeColour": "#000000",
+                "logotypeShadowColour": "#73ADC6",
                 "mode": "dark"
             },
             {
@@ -67,15 +58,6 @@
             },
             {
                 "symbolColours": [
-                    "#F81F7E", "#DA4E4B", "#FF8B33", "#FFA82F", "#D4A442", "#D7C86A", "#96B288", "#8DCDAE", "#88F4E0"
-                ],
-                "bgColour": "#2E3147",
-                "logotypeColour": "#2E3147",
-                "logotypeShadowColour": "#88F4E0",
-                "mode": "dark"
-            },
-            {
-                "symbolColours": [
                     "#41F6C0", "#B0DB9C", "#D9D0B6", "#E8C4BC", "#EFB3C2", "#F674D5", "#EB33D7"
                 ],
                 "bgColour": "#000000",
@@ -85,11 +67,29 @@
             },
             {
                 "symbolColours": [
-                    "#B2F7E9", "#82D9C7", "#6377C5", "#3E3B6B", "#684897", "#6D2B75", "#ED0A8D"
+                    "#F81F7E", "#DA4E4B", "#FF8B33", "#FFA82F", "#D4A442", "#D7C86A", "#96B288", "#8DCDAE", "#88F4E0"
                 ],
-                "bgColour": "#000000",
-                "logotypeColour": "#000000",
-                "logotypeShadowColour": "#73ADC6",
+                "bgColour": "#2E3147",
+                "logotypeColour": "#2E3147",
+                "logotypeShadowColour": "#88F4E0",
+                "mode": "dark"
+            },
+            {
+                "symbolColours": [
+                    "#FFFBFD", "#F9C4E0", "#A3A38E", "#7A995B", "#2A5660", "#20434C"
+                ],
+                "bgColour": "#26364E",
+                "logotypeColour": "#FFF0F8",
+                "logotypeShadowColour": "#20434C",
+                "mode": "dark"
+            },
+            {
+                "symbolColours": [
+                    "#00705a", "#60282c", "#ad0367", "#efc4cc", "#078dd9"
+                ],
+                "bgColour": "#5B7163",
+                "logotypeColour": "#c700b6",
+                "logotypeShadowColour": "#ffe5e5",
                 "mode": "dark"
             }
         ]
