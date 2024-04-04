@@ -263,6 +263,9 @@ function setupKeyButtons() {
     select("#btn4").mousePressed(() => changeNumToChange(3));
     select("#btn5").mousePressed(() => changeNumToChange(4));
     select("#btn6").mousePressed(() => changeNumToChange(5));
+
+    if (keebButtonsVisible) select("#button-holder").style("display", "block");
+    else select("#button-holder").style("display", "none");
 }
 
 function setupButtonStartValues() {
